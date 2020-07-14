@@ -1,0 +1,7 @@
+<ng-container *ngIf="genres; else byIds">
+  <span class="badge badge-secondary mx-1" *ngFor="let genre of genres">{{genre.name}}</span>
+</ng-container>
+
+<ng-template #byIds>
+  <span class="badge badge-secondary mx-1" *ngFor="let name of genreNames">{{name}}</span>
+</ng-template>

@@ -1,0 +1,11 @@
+.active {
+  background: lightgray;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.page-item {
+  cursor: pointer;
+}

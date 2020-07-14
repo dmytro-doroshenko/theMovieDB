@@ -1,0 +1,37 @@
+<ul class="pagination justify-content-center">
+  <li class="page-item" *ngIf="currentPage > 1">
+    <a class="page-link" [routerLink]="['/']" [queryParams]="{page: currentPage - 1}">Previous</a>
+  </li>
+
+  <li class="page-item">
+    <a class="page-link" [routerLink]="['/']" [queryParams]="{page: 1}" routerLinkActive="active">1</a>
+  </li>
+
+  <li class="page-item" *ngIf="pages[0] > 2">
+    <a class="page-link" [routerLink]="['/']" [queryParams]="{page: pages[0] - 1}">...</a>
+  </li>
+
+  <li class="page-item" *ngFor="let page of pages">
+    <a class="page-link" [routerLink]="['/']" [queryParams]="{page: page}" routerLinkActive="active">{{page}}</a>
+  </li>
+
+  <li class="page-item" *ngIf="pages[pages.length - 1] < totalPages - 1">
+    <a class="page-link" [routerLink]="['/']" [queryParams]="{page: pages[pages.length - 1] + 1}">...</a>
+  </li>
+
+  <li class="page-item">
+    <a
+      class="page-link"
+      [routerLink]="['/']"
+      [queryParams]="{page: totalPages}"
+      routerLinkActive="active"
+    >
+      {{totalPages}}
+    </a>
+  </li>
+
+  <li class="page-item" *ngIf="currentPage < totalPages">
+    <a class="page-link " [routerLink]="['/']" [queryParams]="{page: currentPage + 1}">Next</a>
+  </li>
+</ul>
+

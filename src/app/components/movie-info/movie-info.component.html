@@ -1,0 +1,59 @@
+<div class="card mb-3" style="max-width: 1140px;" *ngIf="movie">
+  <div class="row no-gutters">
+
+    <div class="col-md-4">
+      <img [src]="posterPath+movie.poster_path" class="card-img" alt="{{movie.title}}_poster">
+    </div>
+
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+        <h6 class="card-title text-muted" *ngIf="movie.title !== movie.original_title">{{movie.original_title}}</h6>
+        <small *ngIf="movie.tagline">{{movie.tagline}}</small>
+        <hr/>
+
+        <div id="rating" class="card-text" [title]="movie.vote_average">
+          <app-star *ngFor="let star of [1,2,3,4,5,6,7,8,9,10]"
+                    [rating]="movie.vote_average"
+                    [starId]="star"
+          ></app-star>
+        </div>
+
+        <p class="card-text">{{movie.vote_average}}/10 ({{movie.vote_count}} votes)</p>
+
+        <p class="card-text">
+          <strong>Genres: </strong>
+          <app-genre-badge [genres]="movie.genres"></app-genre-badge>
+        </p>
+
+        <p class="card-text">
+          <strong>Release date: </strong>
+          {{movie.release_date | date: 'mediumDate'}}
+        </p>
+
+        <p class="card-text">
+          <strong *ngIf="movie.production_countries.length <= 1; else plural">Country: </strong>
+          <ng-template #plural><strong>Countries: </strong></ng-template>
+          <span *ngFor="let country of movie.production_countries">{{country.name}}, </span>
+        </p>
+
+        <p class="card-text">
+          <strong *ngIf="movie.production_countries.length <= 1; else plural_co">Company: </strong>
+          <ng-template #plural_co><strong>Companies: </strong></ng-template>
+          <span *ngFor="let company of movie.production_companies">{{company.name}}, </span>
+        </p>
+
+        <p class="card-text">
+          <strong>Runtime: </strong>
+          <span>{{movie.runtime}} min.</span>
+        </p>
+
+        <p class="card-text">
+          <span>{{movie.overview}}</span>
+        </p>
+
+        <a href="{{movie.homepage}}" *ngIf="movie.homepage">Watch Trailer</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="card h-100 text-center" routerLink="/movie/{{movieInfo.id}}">
+
+  <img [src]="posterPath" class="card-img-top" alt="{{movieInfo.title}}_poster">
+
+  <div class="card-body">
+    <h5 class="card-title">{{movieInfo.title}}</h5>
+
+    <span class="card-text">{{movieInfo.release_date | date :'y'}}</span>
+
+    <div id="rating" class="card-text" [title]="movieInfo.vote_average/2">
+      <app-star *ngFor="let star of [1,2,3,4,5]"
+        [starId]="star"
+        [rating]="movieInfo.vote_average/2"
+      ></app-star>
+    </div>
+
+    <ng-container *ngIf="allGenres">
+      <app-genre-badge [allGenres]="allGenres" [genreIds]="movieInfo.genre_ids"></app-genre-badge>
+    </ng-container>
+
+  </div>
+</div>
