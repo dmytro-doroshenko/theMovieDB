@@ -20,12 +20,12 @@ export class GenreBadgeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!this.genres) {
-      this.genreNames = this.genreService.getGenreNames(this.genreIds, this.allGenres);
-    } else {
+    if (this.genres) {
       this.genres.forEach(genre => {
         this.genreNames.push(genre.name);
       });
+    } else {
+      this.genreNames = this.genreService.getGenreNames(this.genreIds, this.allGenres);
     }
   }
 }

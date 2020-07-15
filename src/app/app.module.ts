@@ -11,7 +11,7 @@ import {StarComponent} from './components/star/star.component';
 import {MovieInfoComponent} from './components/movie-info/movie-info.component';
 import {HeaderComponent} from './components/header/header.component';
 import {PaginationComponent} from './components/pagination/pagination.component';
-import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import {StarRatingComponent} from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
