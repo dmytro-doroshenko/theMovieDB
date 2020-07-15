@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieService} from '../../services/movie.service';
-import {MovieInfoExtended} from '../../models';
 import {ActivatedRoute} from '@angular/router';
+
 import {environment} from '../../../environments/environment';
+import {MovieInfoExtended} from '../../models';
+import {MovieService} from '../../services';
 
 @Component({
   selector: 'app-movie-info',

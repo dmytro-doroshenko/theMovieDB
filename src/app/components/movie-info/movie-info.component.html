@@ -12,12 +12,7 @@
         <small *ngIf="movie.tagline">{{movie.tagline}}</small>
         <hr/>
 
-        <div id="rating" class="card-text" [title]="movie.vote_average">
-          <app-star *ngFor="let star of [1,2,3,4,5,6,7,8,9,10]"
-                    [rating]="movie.vote_average"
-                    [starId]="star"
-          ></app-star>
-        </div>
+        <app-star-rating [totalStars]="10" [value]="movie.vote_average"></app-star-rating>
 
         <p class="card-text">{{movie.vote_average}}/10 ({{movie.vote_count}} votes)</p>
 

@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {Genre} from '../../models';
-import {MovieService} from '../../services/movie.service';
+import {GenreService} from '../../services';
 
 @Component({
   selector: 'app-genre-badge',
@@ -16,14 +16,16 @@ export class GenreBadgeComponent implements OnInit {
 
   genreNames: string[] = [];
 
-  constructor(private movieService: MovieService) {
+  constructor(private genreService: GenreService) {
   }
 
   ngOnInit(): void {
     if (!this.genres) {
-      this.movieService.getGenreNames(this.genreIds, this.allGenres)
-        .then(names => this.genreNames = names);
+      this.genreNames = this.genreService.getGenreNames(this.genreIds, this.allGenres);
+    } else {
+      this.genres.forEach(genre => {
+        this.genreNames.push(genre.name);
+      });
     }
   }
-
 }

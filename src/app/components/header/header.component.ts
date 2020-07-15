@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {environment} from '../../../environments/environment';
 
 @Component({
@@ -10,7 +10,8 @@ export class HeaderComponent implements OnInit {
 
   logoPath: string = environment.logo_src;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

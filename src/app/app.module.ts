@@ -8,9 +8,10 @@ import {GenreBadgeComponent} from './components/genre-badge/genre-badge.componen
 import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {MoviesPageComponent} from './components/movies-page/movies-page.component';
 import {StarComponent} from './components/star/star.component';
-import { MovieInfoComponent } from './components/movie-info/movie-info.component';
-import { HeaderComponent } from './components/header/header.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
+import {MovieInfoComponent} from './components/movie-info/movie-info.component';
+import {HeaderComponent} from './components/header/header.component';
+import {PaginationComponent} from './components/pagination/pagination.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MoviesPageComponent,
     StarComponent,
     PaginationComponent,
+    StarRatingComponent,
   ],
   imports: [
     AppRoutingModule,

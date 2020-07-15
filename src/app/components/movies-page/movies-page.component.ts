@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 import {Genre, MoviesPage} from '../../models';
-import {MovieService} from '../../services/movie.service';
-import {ActivatedRoute} from '@angular/router';
+import {GenreService, MovieService} from '../../services';
 
 @Component({
   selector: 'app-movies-page',
@@ -14,7 +14,11 @@ export class MoviesPageComponent implements OnInit {
   genres: Genre[];
   pageData: MoviesPage;
 
-  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private genreService: GenreService,
+    private movieService: MovieService,
+  ) {
   }
 
   ngOnInit(): void {
@@ -25,7 +29,7 @@ export class MoviesPageComponent implements OnInit {
       });
     });
 
-    this.movieService.getAllGenres().subscribe((list) => {
+    this.genreService.getAllGenres().subscribe((list) => {
       this.genres = list.genres;
     });
   }

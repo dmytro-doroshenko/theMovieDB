@@ -7,12 +7,7 @@
 
     <span class="card-text">{{movieInfo.release_date | date :'y'}}</span>
 
-    <div id="rating" class="card-text" [title]="movieInfo.vote_average/2">
-      <app-star *ngFor="let star of [1,2,3,4,5]"
-        [starId]="star"
-        [rating]="movieInfo.vote_average/2"
-      ></app-star>
-    </div>
+    <app-star-rating [value]="movieInfo.vote_average/2"></app-star-rating>
 
     <ng-container *ngIf="allGenres">
       <app-genre-badge [allGenres]="allGenres" [genreIds]="movieInfo.genre_ids"></app-genre-badge>

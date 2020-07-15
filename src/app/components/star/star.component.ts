@@ -11,11 +11,9 @@ export class StarComponent implements OnInit {
   @Input() rating;
   @Input() starId;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit(): void {
-
     if (this.rating >= this.starId) {
       this.starClassName = 'star-rating-filled';
     }
