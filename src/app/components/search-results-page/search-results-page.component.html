@@ -1,0 +1,16 @@
+<ng-container *ngIf="resultsPage">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
+    <app-movie-card
+      *ngFor="let movie of resultsPage.results"
+      [movieInfo]="movie"
+      [allGenres]="genres"
+      class="col mb-3"
+    ></app-movie-card>
+  </div>
+
+  <app-pagination
+    class="mx-auto"
+    [currentPage]="resultsPage.page"
+    [totalPages]="resultsPage.total_pages"
+  ></app-pagination>
+</ng-container>

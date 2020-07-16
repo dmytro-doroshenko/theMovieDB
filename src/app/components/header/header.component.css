@@ -9,3 +9,11 @@
   border-radius: 4px;
   max-width: 100%
 }
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.navbar {
+  background-color: #e3f2fd;
+}

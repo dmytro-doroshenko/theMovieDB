@@ -13,17 +13,23 @@ export class MovieService {
   constructor(private http: HttpClient) {
   }
 
+  key = environment.api_key;
+
   getMovies(page?: number): Observable<MoviesPage> {
     const url = environment.api_movies_list_URL;
-    const key = environment.api_key;
 
-    return this.http.get<MoviesPage>(`${url}?api_key=${key}&page=${page}`);
+    return this.http.get<MoviesPage>(`${url}?api_key=${this.key}&page=${page}`);
   }
 
   getMovieInfo(movieId: number): Observable<MovieInfoExtended> {
     const url = environment.api_movie_info_URL;
-    const key = environment.api_key;
 
-    return this.http.get<MovieInfoExtended>(`${url}/${movieId}?api_key=${key}`);
+    return this.http.get<MovieInfoExtended>(`${url}/${movieId}?api_key=${this.key}`);
+  }
+
+  searchMovies(query: string, page: number): Observable<MoviesPage> {
+    const url = environment.api_search_movies_URL;
+
+    return this.http.get<MoviesPage>(`${url}?api_key=${this.key}&query=${query}&page=${page}`);
   }
 }

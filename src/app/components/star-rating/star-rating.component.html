@@ -1,0 +1,6 @@
+<div id="rating" class="card-text" [title]="value" *ngIf="value < totalStars">
+  <app-star *ngFor="let star of starRatingElements"
+            [starId]="star"
+            [rating]="value"
+  ></app-star>
+</div>

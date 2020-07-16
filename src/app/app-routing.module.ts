@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
-import {MovieInfoComponent} from './components/movie-info/movie-info.component';
-import {MoviesPageComponent} from './components/movies-page/movies-page.component';
+import {MovieInfoComponent, MoviesPageComponent, SearchResultsPageComponent} from './components';
 
 const routes: Routes = [
   {path: '', component: MoviesPageComponent},
   {path: 'movie/:movieId', component: MovieInfoComponent},
+  {path: 'search', component: SearchResultsPageComponent},
 ];
 
 @NgModule({

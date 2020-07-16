@@ -1,17 +1,22 @@
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {GenreBadgeComponent} from './components/genre-badge/genre-badge.component';
-import {MovieCardComponent} from './components/movie-card/movie-card.component';
-import {MoviesPageComponent} from './components/movies-page/movies-page.component';
-import {StarComponent} from './components/star/star.component';
-import {MovieInfoComponent} from './components/movie-info/movie-info.component';
-import {HeaderComponent} from './components/header/header.component';
-import {PaginationComponent} from './components/pagination/pagination.component';
-import {StarRatingComponent} from './components/star-rating/star-rating.component';
+import {
+  GenreBadgeComponent,
+  HeaderComponent,
+  MovieCardComponent,
+  MovieInfoComponent,
+  MoviesPageComponent,
+  PaginationComponent,
+  SearchPanelComponent,
+  SearchResultsPageComponent,
+  StarComponent,
+  StarRatingComponent
+} from './components';
 
 @NgModule({
   declarations: [
@@ -21,13 +26,16 @@ import {StarRatingComponent} from './components/star-rating/star-rating.componen
     MovieCardComponent,
     MovieInfoComponent,
     MoviesPageComponent,
-    StarComponent,
     PaginationComponent,
+    StarComponent,
     StarRatingComponent,
+    SearchPanelComponent,
+    SearchResultsPageComponent,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
