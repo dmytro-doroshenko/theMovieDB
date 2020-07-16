@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {MovieService} from '../../services';
-
 @Component({
   selector: 'app-search-panel',
   templateUrl: './search-panel.component.html',
@@ -14,7 +12,7 @@ export class SearchPanelComponent implements OnInit {
     searchQuery: ''
   };
 
-  constructor(private movieService: MovieService, private router: Router) {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {

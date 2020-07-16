@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {Genre, MoviesPage} from '../../models';
-import {GenreService, MovieService} from '../../services';
+import {GenreService, SearchService} from '../../services';
 
 @Component({
   selector: 'app-search-results-page',
@@ -19,7 +19,7 @@ export class SearchResultsPageComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private genreService: GenreService,
-    private movieService: MovieService
+    private searchService: SearchService
   ) {
   }
 
@@ -27,7 +27,7 @@ export class SearchResultsPageComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe((params) => {
       this.query = params.query;
       this.currentPage = params.page;
-      this.movieService.searchMovies(this.query, this.currentPage).subscribe((results) => {
+      this.searchService.searchMovies(this.query, this.currentPage).subscribe((results) => {
         this.resultsPage = results;
       });
     });

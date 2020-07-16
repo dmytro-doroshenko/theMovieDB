@@ -26,10 +26,4 @@ export class MovieService {
 
     return this.http.get<MovieInfoExtended>(`${url}/${movieId}?api_key=${this.key}`);
   }
-
-  searchMovies(query: string, page: number): Observable<MoviesPage> {
-    const url = environment.api_search_movies_URL;
-
-    return this.http.get<MoviesPage>(`${url}?api_key=${this.key}&query=${query}&page=${page}`);
-  }
 }
