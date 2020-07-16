@@ -1,4 +1,4 @@
-<div class="card mb-3" style="max-width: 1140px;" *ngIf="movie">
+<div class="movie-info card mb-3" *ngIf="movie">
   <div class="row no-gutters">
 
     <div class="col-md-4">
@@ -40,7 +40,7 @@
 
         <p class="card-text">
           <strong>Runtime: </strong>
-          <span>{{movie.runtime}} min.</span>
+          <span *ngIf="movie.runtime">{{movie.runtime}} min.</span>
         </p>
 
         <p class="card-text">

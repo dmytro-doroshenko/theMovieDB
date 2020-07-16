@@ -1,8 +1,11 @@
-export {Genre} from './genre';
-export {GenresList} from './genresList';
-export {MovieInfo} from './movieInfo';
-export {MovieInfoExtended} from './movieInfoExtended';
-export {MoviesPage} from './moviesPage';
+export * from './genre';
+export * from './genresList';
+export * from './movieInfo';
+export * from './movieInfoExtended';
+export * from './moviesPage';
+export * from './productionCompanies';
+export * from './productionCountries';
+export * from './spokenLanguages';
 
 
 
