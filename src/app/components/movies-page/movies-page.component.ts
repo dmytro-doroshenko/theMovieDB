@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {Genre, MoviesPage} from '../../models';
-import {GenreService, MovieService} from '../../services';
+import {DataService, GenreService, MovieService} from '../../services';
 
 @Component({
   selector: 'app-movies-page',
@@ -16,7 +16,7 @@ export class MoviesPageComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private genreService: GenreService,
+    private dataService: DataService,
     private movieService: MovieService,
   ) {
   }
@@ -29,8 +29,8 @@ export class MoviesPageComponent implements OnInit {
       });
     });
 
-    this.genreService.getAllGenres().subscribe((list) => {
-      this.genres = list.genres;
+    this.dataService.getGenres().subscribe((genresList) => {
+      this.genres = genresList;
     });
   }
 }

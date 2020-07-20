@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 
 import {Genre, MoviesPage} from '../../models';
-import {GenreService, SearchService} from '../../services';
+import {DataService, SearchService} from '../../services';
 
 @Component({
   selector: 'app-search-results-page',
@@ -18,7 +18,7 @@ export class SearchResultsPageComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private genreService: GenreService,
+    private dataService: DataService,
     private searchService: SearchService
   ) {
   }
@@ -32,8 +32,8 @@ export class SearchResultsPageComponent implements OnInit {
       });
     });
 
-    this.genreService.getAllGenres().subscribe((list) => {
-      this.genres = list.genres;
+    this.dataService.getGenres().subscribe((genresList) => {
+      this.genres = genresList;
     });
   }
 }
